@@ -1,0 +1,19 @@
+.Home {
+    background-color: rgba(6, 39, 70, 0.692);
+    color: wheat;
+    width:80%;
+    box-shadow: 0 2px 3px #ccc;
+    box-sizing: border-box;
+    padding: 10px;
+    padding-bottom: 10px;
+    margin: 20px auto;
+}
+
+.Home h2{
+    color: yellow
+}
+
+.navlink{
+    margin-left: 10px;
+    color: whitesmoke;
+}

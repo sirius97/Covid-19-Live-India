@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
+import classes from './HomePage.module.css';
+import {NavLink} from 'react-router-dom';
 
 class Home extends Component{
 
@@ -14,7 +16,6 @@ class Home extends Component{
                         summary : {...response.data.data.summary}
                     })
                     console.log(this.state.summary)
-                    //console.log(this.state.summary.total)
                 }).catch(er => {
                     console.log(er.message)
                 })
@@ -22,7 +23,7 @@ class Home extends Component{
 
     render(){
         return(
-            <div>
+            <div className = {classes.Home}>
                 <h2>Total Casses</h2>
                 <h4>{this.state.summary.total}</h4>
                 <h2>Total Confirmed Casses</h2>
@@ -33,6 +34,11 @@ class Home extends Component{
                 <h4>{this.state.summary.discharged}</h4>
                 <h2>Total Deaths</h2>
                 <h4>{this.state.summary.deaths}</h4>
+                <NavLink to ='/state'
+                style ={{color:'yellow'}}>See For All States</NavLink>
+                <NavLink to ='/map'
+                style = {{marginLeft: '10px',color: 'yellow'}}
+                >See Map</NavLink>
             </div>
         )
     }
