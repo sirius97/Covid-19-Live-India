@@ -116,7 +116,7 @@ function Map(props) {
             </div>)
       }
     return (
-        <div style = {{overflow: 'hidden',height : '100%'}}>
+        <div style = {{overflow: 'hidden',height : '100%',backgroundColor: 'white'}}>
             <div >
                     <button style = {{backgroundColor: 'green', padding: '10px', marginLeft: '-100px'}} onClick={onChangeButtonClick}>Click to activate map</button>
             </div>
