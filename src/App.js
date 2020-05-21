@@ -20,7 +20,7 @@ class App extends Component {
                 style = {{marginLeft: '10px',color: 'yellow'}}
                 >Map</NavLink>
       </div>
-        <Route path = '/Covid-19-Live-1/' exact component ={Home} />
+        <Route path = '/Covid-19-Live-India/' exact component ={Home} />
         <Route path = '/state' component = {State} />
         <Route path = '/map' component = {Map} />
         </div>
