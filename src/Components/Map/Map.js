@@ -84,42 +84,42 @@ function Map(props) {
         setData(getHeatMapData());
       };
 
+
       let mapPic = <div className = {classes.loader}></div>
       if(places[0]){
           mapPic = (    
             <div>
-                  <div className="center">
-            <button style = {{backgroundColor: 'green', padding: '10px', marginLeft: '5px'}} onClick={onChangeButtonClick}>Click to activate map</button>
-          </div>
-          <ReactTooltip>{tooltipContent}</ReactTooltip>
-            <ComposableMap 
-              data-tip=""
-              projectionConfig={PROJECTION_CONFIG}
-          projection="geoMercator"
-          width={600}
-          height={300}>
-                  <Geographies geography={INDIA_TOPO_JSON}>
-            {({ geographies }) =>
-              geographies.map(geo => {
-                const current = data.find(s => s.id === geo.id);
-                return (
-                  <Geography
-                    key={geo.rsmKey}
-                    geography={geo}
-                    style={geographyStyle}
-                    onMouseEnter={onMouseEnter(geo, current)}
-                    onMouseLeave={onMouseLeave}
-                  />
-                );
-              })
-            }
-          </Geographies>
-  
-          </ComposableMap>
-          </div>)
+                <ReactTooltip>{tooltipContent}</ReactTooltip>
+                    <ComposableMap 
+                        data-tip=""
+                        projectionConfig={PROJECTION_CONFIG}
+                    projection="geoMercator"
+                    width={600}
+                    height={300}>
+                            <Geographies geography={INDIA_TOPO_JSON}>
+                        {({ geographies }) =>
+                        geographies.map(geo => {
+                            const current = data.find(s => s.id === geo.id);
+                            return (
+                            <Geography
+                                key={geo.rsmKey}
+                                geography={geo}
+                                style={geographyStyle}
+                                onMouseEnter={onMouseEnter(geo, current)}
+                                onMouseLeave={onMouseLeave}
+                            />
+                            );
+                        })
+                        }
+                            </Geographies>
+                    </ComposableMap>
+            </div>)
       }
     return (
-        <div>
+        <div style = {{overflow: 'hidden',height : '100%'}}>
+            <div >
+                    <button style = {{backgroundColor: 'green', padding: '10px', marginLeft: '-100px'}} onClick={onChangeButtonClick}>Click to activate map</button>
+            </div>
             {mapPic}
         </div>
     )   

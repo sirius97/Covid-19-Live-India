@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import axios from 'axios';
-import {Route} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 import classes from './StatePage.module.css';
 import Map from '../Map/Map';
 
@@ -21,7 +21,7 @@ class States extends Component {
                     this.setState({
                         regions: places
                     })
-                    //console.log(this.state.regions[0])
+
     })
 }
     render(){
@@ -41,7 +41,6 @@ class States extends Component {
             <div className = {classes.StatePage}>
                 <h3>Deatils on each state</h3>
                 {stateData}
-                <Route path = '/map' render = {() => <Map regions = {this.state.regions}/>} />
             </div>
         )
     }
